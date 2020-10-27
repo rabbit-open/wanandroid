@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.supets.pet.theme">
+
+    <application
+        android:hardwareAccelerated="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+    </application>
+
+</manifest>

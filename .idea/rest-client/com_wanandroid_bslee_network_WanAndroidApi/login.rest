@@ -1,0 +1,47 @@
+POST
+{BASE_URL}/user/login
+&username={username}
+&password={password}
+
+# Headers
+@Content-Type: application/x-www-form-urlencoded
+
+
+%%%
+# Duration: 487 ms
+# POST
+# https://www.wanandroid.com//user/login?&username=lihongjiang&password=lhj628315abc
+# Headers
+# @Content-Type: application/x-www-form-urlencoded
+
+
+# status 200
+
+@Server: Apache-Coyote/1.1
+@Set-Cookie: JSESSIONID=367C584C42C88690B3DE13BB4679FD50; Path=/; Secure; HttpOnly
+@Set-Cookie: loginUserName=lihongjiang; Expires=Wed, 06-May-2020 01:44:32 GMT; Path=/
+@Set-Cookie: token_pass=dd405623861eefaf84b623736f80588b; Expires=Wed, 06-May-2020 01:44:32 GMT; Path=/
+@Set-Cookie: loginUserName_wanandroid_com=lihongjiang; Domain=wanandroid.com; Expires=Wed, 06-May-2020 01:44:32 GMT; Path=/
+@Set-Cookie: token_pass_wanandroid_com=dd405623861eefaf84b623736f80588b; Domain=wanandroid.com; Expires=Wed, 06-May-2020 01:44:32 GMT; Path=/
+@Content-Type: application/json;charset=UTF-8
+@Transfer-Encoding: chunked
+@Date: Mon, 06 Apr 2020 01:44:32 GMT
+
+{
+  "data": {
+    "admin": false,
+    "chapterTops": [],
+    "collectIds": [],
+    "email": "",
+    "icon": "",
+    "id": 1726,
+    "nickname": "lihongjiang",
+    "password": "",
+    "publicName": "lihongjiang",
+    "token": "",
+    "type": 0,
+    "username": "lihongjiang"
+  },
+  "errorCode": 0,
+  "errorMsg": ""
+}

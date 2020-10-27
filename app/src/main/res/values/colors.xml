@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#1F2023</color>
+    <color name="colorPrimaryDark">#1F2023</color>
+    <color name="colorAccent">#FFF</color>
+
+    <drawable name="transparence">#0000</drawable>
+    <color name="transparent">#0000</color>
+    <!--定义APP主题色-->
+    <color name="app_color">#FF354B</color>
+    <color name="app_color_pressed">#7fFF354B</color>
+    <!--顶部导航背景色和标题色-->
+    <color name="new_title_bar_bg">#fbfbfb</color>
+    <color name="new_title_bar_text_color">#333333</color>
+
+    <color name="new_title_bar_app_bg">@color/app_color</color>
+    <color name="new_title_bar_text_app_color">@color/app_color</color>
+    <!--头像点击效果层-->
+    <color name="image_pressed_mask">#66000000</color>
+    <!--昵称字体颜色-->
+    <color name="name_color3">#ff333333</color>
+    <color name="name_color6">#ff666666</color>
+    <color name="name_colord">#ffdddddd</color>
+    <color name="name_color9">#ff999999</color>
+    <color name="name_app_color">@color/app_color</color>
+    <!--占位图-->
+    <color name="place_holder">#f0f0f0</color>
+    <drawable name="place_holder">@color/place_holder</drawable>
+    <!--背景色-->
+    <color name="bg_page">#fff6f6f6</color>
+    <!--搜索框背景色-->
+    <color name="bg_search">#ededed</color>
+    <!--线颜色-->
+    <color name="line_color">@color/color_e5e5e5</color>
+
+    <!--定义banner指示器颜色-->
+    <color name="page_indicator_selected">@color/app_color</color>
+    <color name="page_indicator_normal">#80d6d6d6</color>
+
+    <!--代发颜色-->
+    <color name="replace_color">#FF8016</color>
+    <color name="replace_color_half">#7FFF8016</color>
+
+    <!--常见颜色-->
+    <color name="white">#ffffff</color>
+    <color name="half_alpha_white">#7fffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="color_3">#262626</color>
+    <color name="color_6">#666666</color>
+    <color name="color_9">#999999</color>
+    <color name="color_c">#cccccc</color>
+    <color name="color_d">#dddddd</color>
+    <color name="color_a">#aaaaaa</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_f4f4f4">#f4f4f4</color>
+    <color name="color_353535">#353535</color>
+    <color name="color_fafafa">#fafafa</color>
+    <color name="color_ededed">#ededed</color>
+    <color name="color_e8efff">#e8efff</color>
+
+    <!--状态栏颜色-->
+    <drawable name="statusbarcolor">@drawable/statuscolor</drawable>
+    <color name="statusbarcolor">@color/app_color</color>
+    <!--点击前景色效果-->
+    <color name="click_forground_color">#7f1f1f1f</color>
+
+</resources>

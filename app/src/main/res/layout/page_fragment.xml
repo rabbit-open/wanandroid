@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.wanandroid.bslee.ui.main.ExamplePageViewModel" />
+    </data>
+
+    <com.supets.pet.theme.statsbar.TranslucentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:hasMore="@{vm.hasMore}"
+            app:moreLoading="@{vm.moreLoading}"
+            app:onLoadMoreListener="@{()->vm.loadMore()}"
+            app:onRefreshListener="@{()->vm.refresh()}"
+            app:refreshing="@{vm.refreshing}">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <cn.bingoogolapple.bgabanner.BGABanner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        app:banner_indicatorGravity="bottom|right"
+                        app:banner_isNumberIndicator="true"
+                        app:banner_pointContainerBackground="#0000"
+                        app:banner_transitionEffect="zoom" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        tools:listitem="@layout/item_article" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+    </com.supets.pet.theme.statsbar.TranslucentLinearLayout>
+</layout>
