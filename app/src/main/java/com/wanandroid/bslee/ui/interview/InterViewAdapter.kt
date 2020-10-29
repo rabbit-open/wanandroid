@@ -16,11 +16,16 @@ class InterViewAdapter : BaseAdapter() {
         InterViewVo("个人Jfrog仓库地址", "https://dl.bintray.com/lihongjiang/maven/"),
         InterViewVo("个人github网站", "https://lihongjiang.github.io/"),
         InterViewVo("", ""),
-        InterViewVo("MVC、MVP、MVVM，我到底该怎么选？", "https://blog.csdn.net/singwhatiwanna/article/details/80904132"),
+        InterViewVo(
+            "MVC、MVP、MVVM，我到底该怎么选？",
+            "https://blog.csdn.net/singwhatiwanna/article/details/80904132"
+        ),
         InterViewVo("Android性能优化", "https://www.jianshu.com/p/754f7607c869"),
         InterViewVo("面试：Object方法有哪些?", "https://www.jianshu.com/p/50cde46b2c05"),
         InterViewVo("2020年Android面试题汇总（初级）", "https://www.jianshu.com/p/feb9584b492c"),
-        InterViewVo("2020年Android面试题汇总（中级）", "https://www.jianshu.com/p/c7b6c6851231")
+        InterViewVo("2020年Android面试题汇总（中级）", "https://www.jianshu.com/p/c7b6c6851231"),
+        InterViewVo("", ""),
+        InterViewVo("Mikyou的专栏-Kotlin语言开发和Dart函数式编程", "https://youkmi.blog.csdn.net/article/list/1")
     )
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -29,7 +34,7 @@ class InterViewAdapter : BaseAdapter() {
                 val vo = getItem(position) as InterViewVo
                 text.text = vo.title
                 this.setOnClickListener {
-                    vo.url?.let { WebActivity.nav(0,it, context) }
+                    vo.url?.let { WebActivity.nav(0, it, context) }
                 }
             }
     }
