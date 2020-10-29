@@ -17,6 +17,7 @@ import com.kaopiz.kprogresshud.KProgressHUD
 import com.wanandroid.bslee.BuildConfig
 import com.wanandroid.bslee.R
 import com.wanandroid.bslee.network.WanAndroidApi
+import com.wanandroid.bslee.observer.ResponseObserver
 import com.wanandroid.bslee.showToast
 import com.wanandroid.bslee.utils.ShareUtils
 import com.wanandroid.bslee.web.WanObject
@@ -85,22 +86,17 @@ class WebActivity : AppCompatActivity() {
         share.setOnClickListener { ShareUtils.shareText(this, navTitle + link) }
         collect.setOnClickListener {
             if (id!! > 0) {
-                WanAndroidApi.get().collect(id!!).observe(this,
-                    Observer {
-                        if (it.errorCode == 0) {
+                WanAndroidApi.get().collect(id!!)
+                    .observe(this, object : ResponseObserver<String>() {
+                        override fun onSuccess(t: String?) {
                             showToast("站内收藏成功")
-                        } else {
-                            showToast(it.errorMsg ?: "")
                         }
                     })
             } else {
                 WanAndroidApi.get().collect(navTitle, "来自网页收藏", link).observe(
-                    this,
-                    Observer {
-                        if (it.errorCode == 0) {
+                    this, object : ResponseObserver<String>() {
+                        override fun onSuccess(t: String?) {
                             showToast("站外收藏成功")
-                        } else {
-                            showToast(it.errorMsg ?: "")
                         }
                     })
             }

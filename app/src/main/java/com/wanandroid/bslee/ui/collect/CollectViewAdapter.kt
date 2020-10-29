@@ -1,45 +1,38 @@
 package com.wanandroid.bslee.ui.collect
 
-import android.view.LayoutInflater
-import android.view.View
+import android.view.LayoutInflater.from
 import android.view.ViewGroup
-import android.widget.BaseAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.wanandroid.bslee.R
 import com.wanandroid.bslee.ui.web.WebActivity
 import com.wanandroid.bslee.vo.ArticleVO
 import kotlinx.android.synthetic.main.item_text.view.*
 
-class CollectViewAdapter : BaseAdapter() {
+class CollectViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var data: ArrayList<ArticleVO> = arrayListOf()
+    var data = mutableListOf<ArticleVO>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        return convertView ?: LayoutInflater.from(parent!!.context)
-            .inflate(R.layout.item_text, parent, false).apply {
-                val vo = getItem(position) as ArticleVO
-                text.text = vo.title
-                this.setOnClickListener {
-                    vo.link?.let { WebActivity.nav(vo.chapterId, it, context) }
-                }
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        holder.itemView.apply {
+            val vo = data.get(position) as ArticleVO
+            text.text = vo.title
+            setOnClickListener {
+                vo.link?.let { WebActivity.nav(vo.chapterId, it, context) }
             }
+        }
     }
 
-    override fun getItem(position: Int): Any {
-        return data.get(position);
+    override fun getItemCount(): Int {
+        return data.size
     }
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong();
-    }
-
-    override fun getCount(): Int {
-        return data.size;
-    }
-
-    fun addHome(list: List<ArticleVO>?) {
-        this.data.clear()
-        this.data.addAll(list ?: arrayListOf())
-        notifyDataSetChanged()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val itemView = from(parent.context).inflate(R.layout.item_text, parent, false);
+        return object : RecyclerView.ViewHolder(itemView) {}
     }
 
 }

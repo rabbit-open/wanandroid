@@ -16,10 +16,11 @@ public class OverLayWindowCompact {
                 int sdkInt = Build.VERSION.SDK_INT;
                 if (sdkInt >= Build.VERSION_CODES.O) { //8.0以上
                     Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+                    intent.setData(Uri.parse("package:" + activity.getPackageName()));
                     activity.startActivityForResult(intent, 200);
                 } else if (sdkInt >= Build.VERSION_CODES.M) { //6.0-8.0
                     Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
-                    intent.setData(Uri.parse("package:$packageName"));
+                    intent.setData(Uri.parse("package:" + activity.getPackageName()));
                     activity.startActivityForResult(intent, 200);
                 }
             }
