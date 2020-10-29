@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import com.dj.coroutines.permisstions.InlineRequestPermissionException
 import com.dj.coroutines.permisstions.requestPermissionsForResult
 import com.google.android.material.tabs.TabLayout
@@ -108,10 +109,35 @@ class MainActivity : BaseActivity<MainActivityBinding>() {
         return v
     }
 
+    //add/show/hide  第二次会走onHiddenChange和onResume/OnPause，代替 onHiddenChange
+    private fun initTab2(position: Int) {
+        supportFragmentManager.beginTransaction().apply {
+            for (index in fragments.indices) {
+                val fragment = fragments[index]
+                val tag = fragment.javaClass.simpleName.plus(index);
+                if (position == index) {
+                    supportFragmentManager.findFragmentByTag(tag)?.apply {
+                        show(this);
+                    } ?: let {
+                        add(R.id.fl_content, fragment, tag)
+                    }
+                    setMaxLifecycle(fragment, Lifecycle.State.RESUMED)
+                } else {
+                    supportFragmentManager.findFragmentByTag(tag)?.apply {
+                        hide(this);
+                        setMaxLifecycle(fragment, Lifecycle.State.STARTED)
+                    }
+                }
+            }
+
+        }.commit()
+    }
+
+    //add/show/hide  第二次只会走onHiddenChange
     private fun initTab(position: Int) {
         val transaction = supportFragmentManager.beginTransaction()
         fragments.forEachIndexed { index, fragment ->
-            val tag = fragment.javaClass.simpleName;
+            val tag = fragment.javaClass.simpleName.plus(index);
             if (index == position) {
                 supportFragmentManager.findFragmentByTag(tag)?.apply {
                     transaction.show(this);
@@ -126,5 +152,4 @@ class MainActivity : BaseActivity<MainActivityBinding>() {
         }
         transaction.commit()
     }
-
 }
