@@ -26,12 +26,22 @@ android {
 
     }
 
+    signingConfigs {
+        sign_config {
+            storeFile file("./wanandroid.jks")
+            storePassword "wanandroid"
+            keyAlias "wanandroid"
+            keyPassword "wanandroid"
+        }
+    }
+
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
     }
 
@@ -39,6 +49,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.sign_config
+        }
+        debug {
+            signingConfig signingConfigs.sign_config
         }
     }
 
