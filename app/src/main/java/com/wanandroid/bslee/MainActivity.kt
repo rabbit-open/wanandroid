@@ -111,11 +111,17 @@ class MainActivity : BaseActivity<MainActivityBinding>() {
     private fun initTab(position: Int) {
         val transaction = supportFragmentManager.beginTransaction()
         fragments.forEachIndexed { index, fragment ->
+            val tag = fragment.javaClass.simpleName;
             if (index == position) {
-                transaction.replace(
-                    R.id.fl_content, fragment, fragment.javaClass
-                        .simpleName
-                )
+                supportFragmentManager.findFragmentByTag(tag)?.apply {
+                    transaction.show(this);
+                } ?: let {
+                    transaction.add(R.id.fl_content, fragment, tag)
+                }
+            } else {
+                supportFragmentManager.findFragmentByTag(tag)?.apply {
+                    transaction.hide(this);
+                }
             }
         }
         transaction.commit()
