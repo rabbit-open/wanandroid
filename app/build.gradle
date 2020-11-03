@@ -103,13 +103,7 @@ dependencies {
 
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
-    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.0'      //核心必须依赖
     implementation 'com.scwang.smart:refresh-header-classics:2.0.0'    //经典刷新头
-    implementation 'com.scwang.smart:refresh-header-radar:2.0.0'       //雷达刷新头
-    implementation 'com.scwang.smart:refresh-header-falsify:2.0.0'     //虚拟刷新头
-    implementation 'com.scwang.smart:refresh-header-material:2.0.0'    //谷歌刷新头
-    implementation 'com.scwang.smart:refresh-header-two-level:2.0.0'   //二级刷新头
-    implementation 'com.scwang.smart:refresh-footer-ball:2.0.0'        //球脉冲加载
     implementation 'com.scwang.smart:refresh-footer-classics:2.0.0'    //经典加载
 
     debugImplementation "androidx.supets.pet.mocklib:mock-okhttp-simple:2.47.28_beta0"

@@ -1,4 +1,4 @@
-package com.wanandroid.bslee.compat;
+package com.wanandroid.compat;
 
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;

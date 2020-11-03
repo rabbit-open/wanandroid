@@ -11,7 +11,7 @@ import com.dj.coroutines.permisstions.InlineRequestPermissionException
 import com.dj.coroutines.permisstions.requestPermissionsForResult
 import com.google.android.material.tabs.TabLayout
 import com.wanandroid.bslee.base.BaseActivity
-import com.wanandroid.bslee.compat.OverLayWindowCompact
+import com.wanandroid.compat.OverLayWindowCompact
 import com.wanandroid.bslee.databinding.MainActivityBinding
 import com.wanandroid.bslee.model.TabItem
 import com.wanandroid.bslee.ui.collect.CollectViewFragment

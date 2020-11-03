@@ -1,4 +1,4 @@
-package com.wanandroid.bslee.compat;
+package com.wanandroid.compat;
 
 import android.content.Context;
 import android.content.Intent;

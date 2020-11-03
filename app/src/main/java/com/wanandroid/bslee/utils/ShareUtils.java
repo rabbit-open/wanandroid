@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.view.View;
 
-import com.wanandroid.bslee.compat.FileProviderCompat;
+import com.wanandroid.compat.FileProviderCompat;
 
 import java.io.File;
 import java.io.FileNotFoundException;
