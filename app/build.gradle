@@ -66,7 +66,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'androidx.multidex:multidex:2.0.1'
@@ -77,6 +77,19 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation "androidx.paging:paging-runtime-ktx:2.1.2" // For Kotlin use paging-runtime-ktx
+    testImplementation "androidx.paging:paging-common-ktx:2.1.2" // For Kotlin use paging-common-ktx
+    implementation "androidx.paging:paging-rxjava2-ktx:2.1.2" // For Kotlin use paging-rxjava2-ktx
+
+    implementation "androidx.room:room-runtime:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.5"
+    implementation "androidx.room:room-ktx:2.2.5"
+    testImplementation "androidx.room:room-testing:2.2.5"
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+
     //三方库
     implementation project(":themelib")
     implementation project(":coroutinespermisstions")
@@ -103,8 +116,9 @@ dependencies {
 
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
-    implementation 'com.scwang.smart:refresh-header-classics:2.0.0'    //经典刷新头
-    implementation 'com.scwang.smart:refresh-footer-classics:2.0.0'    //经典加载
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
 
     debugImplementation "androidx.supets.pet.mocklib:mock-okhttp-simple:2.47.28_beta0"
     releaseImplementation "androidx.supets.pet.mocklib:mock-okhttp-no-op:2.46.28"
