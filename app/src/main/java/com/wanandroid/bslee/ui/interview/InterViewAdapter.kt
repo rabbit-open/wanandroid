@@ -25,7 +25,20 @@ class InterViewAdapter : BaseAdapter() {
         InterViewVo("2020年Android面试题汇总（初级）", "https://www.jianshu.com/p/feb9584b492c"),
         InterViewVo("2020年Android面试题汇总（中级）", "https://www.jianshu.com/p/c7b6c6851231"),
         InterViewVo("", ""),
-        InterViewVo("Mikyou的专栏-Kotlin语言开发和Dart函数式编程", "https://youkmi.blog.csdn.net/article/list/1")
+        InterViewVo(
+            "Mikyou的专栏-Kotlin语言开发和Dart函数式编程",
+            "https://youkmi.blog.csdn.net/article/list/1"
+        ),
+        InterViewVo(
+            "Kotlin下的5种单例模式",
+            "https://blog.csdn.net/u014674862/article/details/81177260"
+        ),
+        InterViewVo("", ""),
+        InterViewVo("android源码社区", "http://www.androidos.net.cn/sourcecode"),
+        InterViewVo("Kotlin中文社区文档", "https://www.kotlincn.net/docs/reference/"),
+        InterViewVo("Flutter中文社区", "https://flutterchina.club/"),
+        InterViewVo("Google官方文档", "https://developer.android.google.cn/jetpack")
+
     )
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
