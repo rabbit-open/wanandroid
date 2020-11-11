@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.wanandroid.bslee.R
+import com.wanandroid.jetpack.samplepaging.R
 import com.wanandroid.jetpack.samplepaging.viewmodel.CommonViewModel
 import kotlinx.android.synthetic.main.activity_basic_usage.*
 

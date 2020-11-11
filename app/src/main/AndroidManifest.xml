@@ -85,28 +85,6 @@
             <!--                <data android:mimeType="text/*" />-->
             <!--            </intent-filter>-->
         </activity>
-
-        <activity android:name="com.wanandroid.jetpack.samplepaging.ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.wanandroid.jetpack.samplepaging.ui.basic.BasicUsageActivity"
-            android:label="Paging基本用法"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.wanandroid.jetpack.samplepaging.ui.header_simple.HeaderSimpleActivity"
-            android:label="多类型列表方式添加Header"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name="com.wanandroid.jetpack.samplepaging.ui.header_proxy.HeaderProxyActivity"
-            android:label="为列表添加Header"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

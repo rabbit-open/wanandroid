@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app_paging" />
             <option value="$PROJECT_DIR$/coroutinespermisstions" />
             <option value="$PROJECT_DIR$/themelib" />
           </set>

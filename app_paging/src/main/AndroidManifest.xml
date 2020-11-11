@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wanandroid.jetpack.samplepaging">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--android 11 文件权限,目标30，分区强制-->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="Paging框架"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.basic.BasicUsageActivity"
+            android:label="Paging基本用法"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.header_simple.HeaderSimpleActivity"
+            android:label="多类型列表方式添加Header"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.header_proxy.HeaderProxyActivity"
+            android:label="为列表添加Header"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -8,12 +8,10 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.wanandroid.bslee"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         //指定room.schemaLocation生成的文件路径
@@ -25,16 +23,6 @@ android {
         }
 
     }
-
-    signingConfigs {
-        sign_config {
-            storeFile file("./wanandroid.jks")
-            storePassword "wanandroid"
-            keyAlias "wanandroid"
-            keyPassword "wanandroid"
-        }
-    }
-
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -49,10 +37,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.sign_config
         }
         debug {
-            signingConfig signingConfigs.sign_config
         }
     }
 
@@ -94,10 +80,6 @@ dependencies {
     implementation project(":themelib")
     implementation project(":coroutinespermisstions")
 
-    //测试
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //三方框架
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'//21
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
@@ -120,8 +102,4 @@ dependencies {
     implementation 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
     implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
 
-    debugImplementation "androidx.supets.pet.mocklib:mock-okhttp-simple:2.47.28_beta0"
-    releaseImplementation "androidx.supets.pet.mocklib:mock-okhttp-no-op:2.46.28"
-
-    api project(":app_paging")
 }

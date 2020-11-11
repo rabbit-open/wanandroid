@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.wanandroid.jetpack.samplepaging.ui.header_proxy.HeaderProxyActivity
-import com.wanandroid.bslee.R
+import com.wanandroid.jetpack.samplepaging.R
 import com.wanandroid.jetpack.samplepaging.ui.basic.BasicUsageActivity
 import com.wanandroid.jetpack.samplepaging.ui.header_simple.HeaderSimpleActivity
 import kotlinx.android.synthetic.main.activity_main.*

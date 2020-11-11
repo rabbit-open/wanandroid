@@ -1,4 +1,4 @@
-package com.wanandroid.jetpack.samplepaging.ui.header_proxy
+package com.wanandroid.jetpack.samplepaging.ui.header_simple
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,17 +6,22 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.wanandroid.bslee.R
+import com.wanandroid.jetpack.samplepaging.R
 import com.wanandroid.jetpack.samplepaging.viewmodel.CommonViewModel
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_header_proxy.*
+import kotlinx.android.synthetic.main.activity_header_simple.*
 import java.util.concurrent.TimeUnit
 
-class HeaderProxyActivity : AppCompatActivity() {
+/**
+ * 直接通过多类型列表的方式实现Header
+ *
+ * 实际上是有缺陷的，详情参考[HeaderSimpleAdapter]和运行后的效果
+ */
+class HeaderSimpleActivity : AppCompatActivity() {
 
-    private lateinit var mAdapter: HeaderProxyAdapter
+    private lateinit var mAdapter: HeaderSimpleAdapter
 
     private val viewModel by lazy(LazyThreadSafetyMode.NONE) {
         ViewModelProviders.of(this, object : ViewModelProvider.Factory {
@@ -27,9 +32,9 @@ class HeaderProxyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_header_proxy)
+        setContentView(R.layout.activity_header_simple)
 
-        mAdapter = HeaderProxyAdapter()
+        mAdapter = HeaderSimpleAdapter()
         recyclerView.adapter = mAdapter
 
         binds()

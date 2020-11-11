@@ -1,4 +1,5 @@
 rootProject.name='WanAndroid'
 include ':app'
+include ':app_paging'
 include ':themelib'
 include ':coroutinespermisstions'

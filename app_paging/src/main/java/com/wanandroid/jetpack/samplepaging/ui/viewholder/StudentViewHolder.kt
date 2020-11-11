@@ -3,7 +3,7 @@ package com.wanandroid.jetpack.samplepaging.ui.viewholder
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import com.wanandroid.bslee.R
+import com.wanandroid.jetpack.samplepaging.R
 import com.wanandroid.jetpack.samplepaging.db.Student
 
 class StudentViewHolder(parent: ViewGroup) : androidx.recyclerview.widget.RecyclerView.ViewHolder(
